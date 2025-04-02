@@ -1,7 +1,6 @@
 #include <iostream>
 #include <map>
 #include <string>
-
 #include "board.hpp"
 
 using namespace std;
@@ -32,17 +31,11 @@ void Board::createBoard()
  {
  case 1://Dla bialych
  cout<<"You re playing White!";
- arr["A1"]="[R]";
- arr["H1"]="[R]";
- arr["B1"]="[N]";
- arr["C1"]="[B]";
- arr["F1"]="[B]";
- arr["G1"]="[N]";
- arr["D1"]="[Q]";
- arr["E1"]="[K]";
- for(int i=0;i<8;i++)
+ 
+ for(int i=65;i<73;i++)
  {
-     arr[]="[P]";
+    string k={char(i), '2'};
+    arr.insert({k, "P"});
  }
  arr["H8"]="[r]";
  arr["A8"]="[r]";
