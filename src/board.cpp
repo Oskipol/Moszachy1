@@ -61,7 +61,7 @@ case 2://Dla czarnych
 cout<<"You re playing black!";
 arr[0][0]="[R]";
 arr[0][7]="[R]";
-arr[0][1]="[KN]";
+arr[0][1]="[N]";
 arr[0][2]="[B]";
 arr[0][5]="[B]";
 arr[0][6]="[N]";
