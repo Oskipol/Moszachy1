@@ -4,119 +4,77 @@
 #include "board.hpp"
 
 using namespace std;
-    KACZKA
 
-    map <string,string> arr = {{"A1", "[R]"},{"A2", "[N]"},{"A3", "[B]"},{"A4", "[K]"},{"A5", "[Q]"},{"A6","[B]"},{"A7", "[N]"},{"A8", "[R]"}};
+map <string,string> arr = {{"A1", "[R]"},{"B1", "[N]"},{"C1", "[B]"},{"D1", "[K]"},{"E1", "[Q]"},{"F1","[B]"},{"G1", "[N]"},{"H1", "[R]"},
+{"A8", "[r]"},{"B8", "[n]"},{"C8", "[b]"},{"D8", "q]"},{"E8", "[k]"},{"F8","[b]"},{"G8", "[n]"},{"H8", "[r]"}};
 
 void Board::createBoard()
 {
- 
-    
-    for (int i = 0; i < 8; i++) {
-        cout << endl;
-        for (int j = 0; j < 8; j++) {
-            arr[{i, j}] = "[ ]";
-            cout << arr[{i, j}];
-        }
-    }
-
  int choice;
  cout<<"Which pieces would you like to play?"<<endl;
  cout<<"1.White"<<endl;
  cout<<"2.Black"<<endl;
  cout<<"3.Random"<<endl;
  cout<<"Your choice:"; cin>>choice;
- 
 
- switch (choice)
- {
- case 1://Dla bialych
- cout<<"You re playing White!";
- 
+
+for(int i=3;i<6;i++)
+{
+   for(int j=65;j<73;j++)
+   {
+      string k={char(j),static_cast<char>(i+'0')};
+      arr.insert({k,"[ ]"});
+   }
+}
+
  for(int i=65;i<73;i++)
  {
     string k={char(i), '2'};
     arr.insert({k, "P"});
  }
- arr["H8"]="[r]";
- arr["A8"]="[r]";
- arr["G8"]="[n]";
- arr["F8"]="[b]";
- arr["C8"]="[b]";
- arr["B8"]="[n]";
- arr["E8"]="[k]";
- arr["D8"]="[q]";
+
+ for(int i=65;i<73;i++)
+ {
+    string k={char(i), '7'};
+    arr.insert({k, "p"});
+ }
+ 
+ switch (choice){
+ case 1://Dla bialych
+ cout<<"You re playing White!"<<endl;
+
  for(int i=0;i<8;i++)
  {
-     arr[]="[p]";
+   cout<<endl;
+    for(int j=65;j<73;j++)
+    {
+       string k={char(j), static_cast<char>(i+'0')};
+       cout<<arr[k];
+       //cout<<k;
+    }
  }
+ 
+ 
+
 
 break;
 
 case 2://Dla czarnych 
-cout<<"You re playing black!";
-arr[]="[R]";
-arr[0][7]="[R]";
-arr[0][1]="[N]";
-arr[0][2]="[B]";
-arr[0][5]="[B]";
-arr[0][6]="[N]";
-arr[0][3]="[Q]";
-arr[0][4]="[K]";
-for(int i=0;i<8;i++)
-{
-    arr[1][i]="[P]";
-}
-arr[7][0]="[r]";
-arr[7][7]="[r]";
-arr[7][1]="[n]";
-arr[7][2]="[b]";
-arr[7][5]="[b]";
-arr[7][6]="[n]";
-arr[7][3]="[k]";
-arr[7][4]="[q]";
-for(int i=0;i<8;i++)
-{
-    arr[6][i]="[p]";
-}
+cout<<"You re playing black!"<<endl;
+
 break;
 //DOKLEIC WERSJE DLA RANDOM 
- }
- cout<<endl;
- for(int i=0;i<8;i++)
- {
-    for(int j=0;j<8;j++)
-    {
-        cout<<arr[i][j];
-    }
-    cout<<endl;
- }
+}
 }
 
 
 void Board::movingPieces()
 {
-    
+
     cout<<"Which piece would you like to move from: ";
     cin>>coordinate1;
     cout<<endl;
     cout<<"Where would you like to move this piece to: ";
     cin>>coordinate2;
-    cout<<(int)coordinate1[0]-65<<" "<<coordinate1[1]-'0'<<endl<<(int)coordinate2[0]-65<<" "<<coordinate2[1]-'0'<<endl;
-    arr[coordinate2[1]-1-'0'][(int)coordinate2[0]-65]= arr[coordinate1[1]-1-'0'][(int)coordinate1[0]-65];
-    arr[coordinate1[1]-1-'0'][(int)coordinate1[0]-65]="[ ]";
-    // arr[0][2]=arr[0][1];
-    // arr[0][1]="[ ]";
-    
-
-    for(int i=0;i<8;i++)
-    {
-       for(int j=0;j<8;j++)
-       {
-           cout<<arr[i][j];
-       }
-       cout<<endl;
-    }
-
 }
 
