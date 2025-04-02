@@ -1,10 +1,13 @@
 #include <iostream>
-#include <utility>
+#include <map>
+#include <string>
+
 #include "board.hpp"
 
 using namespace std;
 
-   string arr[8][8];
+
+    map <string,string> arr = {{}};
 
 void Board::createBoard()
 {
@@ -15,7 +18,9 @@ void Board::createBoard()
         cout<<endl;
         for(int j=0;j<8;j++)
         {
-            arr[i][j]="[ ]";
+            string key = to_string(i)+ "," + to_string(j);
+            arr[key]="[ ]";
+            cout<<arr[key];
         }
     }
 
@@ -31,29 +36,29 @@ void Board::createBoard()
  {
  case 1://Dla bialych
  cout<<"You re playing White!";
- arr[7][0]="[R]";
- arr[7][7]="[R]";
- arr[7][1]="[N]";
- arr[7][2]="[B]";
- arr[7][5]="[B]";
- arr[7][6]="[N]";
- arr[7][3]="[Q]";
- arr[7][4]="[K]";
+ arr["A1"]="[R]";
+ arr["H1"]="[R]";
+ arr["B1"]="[N]";
+ arr["C1"]="[B]";
+ arr["F1"]="[B]";
+ arr["G1"]="[N]";
+ arr["D1"]="[Q]";
+ arr["E1"]="[K]";
  for(int i=0;i<8;i++)
  {
-     arr[6][i]="[P]";
+     arr[]="[P]";
  }
- arr[0][0]="[r]";
- arr[0][7]="[r]";
- arr[0][1]="[n]";
- arr[0][2]="[b]";
- arr[0][5]="[b]";
- arr[0][6]="[n]";
- arr[0][3]="[k]";
- arr[0][4]="[q]";
+ arr["H8"]="[r]";
+ arr["A8"]="[r]";
+ arr["G8"]="[n]";
+ arr["F8"]="[b]";
+ arr["C8"]="[b]";
+ arr["B8"]="[n]";
+ arr["E8"]="[k]";
+ arr["D8"]="[q]";
  for(int i=0;i<8;i++)
  {
-     arr[1][i]="[p]";
+     arr[]="[p]";
  }
 
 break;
@@ -107,10 +112,11 @@ void Board::movingPieces()
     cout<<endl;
     cout<<"Where would you like to move this piece to: ";
     cin>>coordinate2;
- 
-    arr[(int)coordinate2[0]-65][coordinate2[1]-'0']= arr[(int)coordinate1[0]-65][coordinate1[1]-'0'];
-
-    arr[(int)coordinate1[0]-65][coordinate1[1]-'0']="[ ]";
+    cout<<(int)coordinate1[0]-65<<" "<<coordinate1[1]-'0'<<endl<<(int)coordinate2[0]-65<<" "<<coordinate2[1]-'0'<<endl;
+    arr[coordinate2[1]-1-'0'][(int)coordinate2[0]-65]= arr[coordinate1[1]-1-'0'][(int)coordinate1[0]-65];
+    arr[coordinate1[1]-1-'0'][(int)coordinate1[0]-65]="[ ]";
+    // arr[0][2]=arr[0][1];
+    // arr[0][1]="[ ]";
     
 
     for(int i=0;i<8;i++)
