@@ -5,7 +5,7 @@
 #include "board.hpp"
 
 using namespace std;
-
+    KACZKA
 
     map <string,string> arr = {{"A1", "[R]"},{"A2", "[N]"},{"A3", "[B]"},{"A4", "[K]"},{"A5", "[Q]"},{"A6","[B]"},{"A7", "[N]"},{"A8", "[R]"}};
 
