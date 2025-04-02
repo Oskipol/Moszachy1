@@ -1,4 +1,5 @@
 #include <iostream>
+#include <utility>
 #include "board.hpp"
 
 using namespace std;
@@ -108,8 +109,7 @@ void Board::movingPieces()
     cin>>coordinate2;
  
     arr[(int)coordinate2[0]-65][coordinate2[1]-'0']= arr[(int)coordinate1[0]-65][coordinate1[1]-'0'];
-
-    arr[(int)coordinate1[0]-65][coordinate1[1]-'0']="[ ]";
+    //arr[(int)coordinate1[0]-65][coordinate1[1]-'0']="[ ]";
     
 
     for(int i=0;i<8;i++)
