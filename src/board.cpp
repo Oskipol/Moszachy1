@@ -1,7 +1,6 @@
 #include <iostream>
 #include <map>
 #include <string>
-
 #include "board.hpp"
 
 using namespace std;
@@ -13,14 +12,11 @@ void Board::createBoard()
 {
  
     
-    for(int i=0;i<8;i++)
-    {
-        cout<<endl;
-        for(int j=0;j<8;j++)
-        {
-            string key = to_string(i)+ "," + to_string(j);
-            arr[key]="[ ]";
-            cout<<arr[key];
+    for (int i = 0; i < 8; i++) {
+        cout << endl;
+        for (int j = 0; j < 8; j++) {
+            arr[{i, j}] = "[ ]";
+            cout << arr[{i, j}];
         }
     }
 
@@ -59,7 +55,7 @@ break;
 
 case 2://Dla czarnych 
 cout<<"You re playing black!";
-arr[0][0]="[R]";
+arr[]="[R]";
 arr[0][7]="[R]";
 arr[0][1]="[N]";
 arr[0][2]="[B]";
