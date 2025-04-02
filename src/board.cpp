@@ -14,7 +14,7 @@ void Board::createBoard()
         cout<<endl;
         for(int j=0;j<8;j++)
         {
-            arr[i][j]="[]";
+            arr[i][j]="[ ]";
         }
     }
 
@@ -86,6 +86,7 @@ for(int i=0;i<8;i++)
 break;
 //DOKLEIC WERSJE DLA RANDOM 
  }
+ cout<<endl;
  for(int i=0;i<8;i++)
  {
     for(int j=0;j<8;j++)
