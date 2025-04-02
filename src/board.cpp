@@ -106,10 +106,11 @@ void Board::movingPieces()
     cout<<endl;
     cout<<"Where would you like to move this piece to: ";
     cin>>coordinate2;
- 
-    arr[(int)coordinate2[0]-65][coordinate2[1]-'0']= arr[(int)coordinate1[0]-65][coordinate1[1]-'0'];
-
-    arr[(int)coordinate1[0]-65][coordinate1[1]-'0']="[ ]";
+    cout<<(int)coordinate1[0]-65<<" "<<coordinate1[1]-'0'<<endl<<(int)coordinate2[0]-65<<" "<<coordinate2[1]-'0'<<endl;
+    arr[coordinate2[1]-1-'0'][(int)coordinate2[0]-65]= arr[coordinate1[1]-1-'0'][(int)coordinate1[0]-65];
+    arr[coordinate1[1]-1-'0'][(int)coordinate1[0]-65]="[ ]";
+    // arr[0][2]=arr[0][1];
+    // arr[0][1]="[ ]";
     
 
     for(int i=0;i<8;i++)
