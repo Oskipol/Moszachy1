@@ -18,6 +18,7 @@ Pawn::Pawn(int idd){
 string Figure::get_name()const{
     return name;
 }
+//ok
 void Figure::set_color(bool col){
     color=col;
     if(color) name="[p]";
