@@ -2,7 +2,8 @@
 #include <map>
 #include <string>
 #include "board.hpp"
-
+#include "game.hpp"
+#include <vector>
 using namespace std;
 
  map <string,string> arr = {{"A1", "[R]"},{"B1", "[N]"},{"C1", "[B]"},{"D1", "[K]"},{"E1", "[Q]"},{"F1","[B]"},{"G1", "[N]"},{"H1", "[R]"},
@@ -11,7 +12,7 @@ using namespace std;
 
 void Board::createBoard()
 { 
-
+vector<Pawn> pawns;
 for(int i=3;i<7;i++)
 {
    for(int j=65;j<73;j++)
@@ -20,11 +21,12 @@ for(int i=3;i<7;i++)
       arr.insert({k,"[ ]"});
    }
 }
-
  for(int i=65;i<73;i++)
  {
-    string k={char(i), '2'};
-    arr.insert({k, "[P]"});
+   string k={char(i), '2'};
+   pawns.push_back(i+1);
+   pawns[i+1].set_color(false);
+   arr.insert({k, pawns[i+1].get_name()});
  }
 
  for(int i=65;i<73;i++)

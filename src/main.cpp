@@ -13,12 +13,7 @@ int main(){
 
     BlackBoard b1;
 
-    b1.createBoard();
     b1.showChessoard();
-    b1.movingPieces();
-    b1.movingPieces();
-    b1.movingPieces();
-    b1.movingPieces();
 
 
   
