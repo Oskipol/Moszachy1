@@ -12,30 +12,37 @@ class Game
     string pole1,pole2;
 
     public:
-    virtual void moving(string &ruch1,string &ruch2)=0;
-    virtual void castling() =0;
-    virtual void promotion() =0;
-    virtual void exchange() =0;
-    virtual void enPassant() =0;
-    virtual void check() =0;
-    virtual void checkMate() =0;
+    void moving(string &ruch1,string &ruch2);
+    void castling();
+    void promotion();
+    void exchange();
+    void enPassant();
+    void check();
+    void checkMate();
 
     
-    friend class Figure;
+
 };
 
-class Figure
+class Figure:public Game
 {
-friend class Game;
-//A
+protected:
+    int id;
+    string name;
+    bool color;
+
 public:
-virtual void wayOfMoving() =0;
+virtual void wayOfMoving()=0;
+void set_color(bool &col);
+string get_name();
 
 };
 
 class Pawn : public Figure
 {
     public:
+    Pawn(int idd);
+    
     void wayOfMoving();
 };
 
