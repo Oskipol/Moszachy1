@@ -6,7 +6,7 @@
 using namespace std;
 
 map <string,string> arr = {{"A1", "[R]"},{"B1", "[N]"},{"C1", "[B]"},{"D1", "[K]"},{"E1", "[Q]"},{"F1","[B]"},{"G1", "[N]"},{"H1", "[R]"},
-{"A8", "[r]"},{"B8", "[n]"},{"C8", "[b]"},{"D8", "q]"},{"E8", "[k]"},{"F8","[b]"},{"G8", "[n]"},{"H8", "[r]"}};
+{"A8", "[r]"},{"B8", "[n]"},{"C8", "[b]"},{"D8", "[q]"},{"E8", "[k]"},{"F8","[b]"},{"G8", "[n]"},{"H8", "[r]"}};
 
 void Board::createBoard()
 {
@@ -18,7 +18,7 @@ void Board::createBoard()
  cout<<"Your choice:"; cin>>choice;
 
 
-for(int i=3;i<6;i++)
+for(int i=3;i<7;i++)
 {
    for(int j=65;j<73;j++)
    {
@@ -30,30 +30,29 @@ for(int i=3;i<6;i++)
  for(int i=65;i<73;i++)
  {
     string k={char(i), '2'};
-    arr.insert({k, "P"});
+    arr.insert({k, "[P]"});
  }
 
  for(int i=65;i<73;i++)
  {
     string k={char(i), '7'};
-    arr.insert({k, "p"});
+    arr.insert({k, "[p]"});
  }
  
  switch (choice){
  case 1://Dla bialych
  cout<<"You re playing White!"<<endl;
 
- for(int i=0;i<8;i++)
+ for(int i=1;i<9;i++)
  {
    cout<<endl;
     for(int j=65;j<73;j++)
     {
        string k={char(j), static_cast<char>(i+'0')};
        cout<<arr[k];
-       //cout<<k;
     }
  }
- ///dasdasdasdasdasdads
+
  
 
 
@@ -71,7 +70,7 @@ break;
 void Board::movingPieces()
 {
 
-    cout<<"Which piece would you like to move from: ";
+    cout<<"\nWhich piece would you like to move from: ";
     cin>>coordinate1;
     cout<<endl;
     cout<<"Where would you like to move this piece to: ";
