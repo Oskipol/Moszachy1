@@ -10,10 +10,13 @@ class Board
 {
     private:
     string coordinate1, coordinate2;
+    bool choice;
     
     public:
     void createBoard();
     void movingPieces();
+    bool chooseColor();
+    void showChessoard();
     
 };
 

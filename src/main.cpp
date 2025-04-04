@@ -7,6 +7,7 @@ int main(){
 
 
     Board b1;
+    b1.chooseColor();
     b1.createBoard();
     b1.movingPieces();
     b1.movingPieces();
