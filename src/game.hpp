@@ -27,7 +27,7 @@ class Game
 class Figure
 {
 friend class Game;
-
+//A
 public:
 virtual void wayOfMoving() =0;
 
