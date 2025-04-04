@@ -1,5 +1,6 @@
 #include <iostream>
 #include "board.hpp"
+#include "game.cpp"
 
 using namespace std;
 
@@ -12,14 +13,9 @@ int main(){
     //  b1.showChessoard();
 
     BlackBoard b1;
-
-    b1.createBoard();
-    b1.showChessoard();
-    b1.movingPieces();
-    b1.movingPieces();
-    b1.movingPieces();
-    b1.movingPieces();
-
+    Game f1;
+    f1.moving("A1", "A2");
+    
 
   
     

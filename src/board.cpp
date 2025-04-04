@@ -2,9 +2,9 @@
 #include <map>
 #include <string>
 #include "board.hpp"
+#include "game.hpp"
 
 using namespace std;
-
  map <string,string> arr = {{"A1", "[R]"},{"B1", "[N]"},{"C1", "[B]"},{"D1", "[K]"},{"E1", "[Q]"},{"F1","[B]"},{"G1", "[N]"},{"H1", "[R]"},
 {"A8", "[r]"},{"B8", "[n]"},{"C8", "[b]"},{"D8", "[q]"},{"E8", "[k]"},{"F8","[b]"},{"G8", "[n]"},{"H8", "[r]"}};
 
@@ -20,7 +20,7 @@ for(int i=3;i<7;i++)
       arr.insert({k,"[ ]"});
    }
 }
-
+   
  for(int i=65;i<73;i++)
  {
     string k={char(i), '2'};
