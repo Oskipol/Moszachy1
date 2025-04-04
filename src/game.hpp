@@ -28,13 +28,14 @@ class Figure:public Game
 {
 protected:
     int id;
-    string name;
+    string name, pole;
     bool color;
 
 public:
-virtual void wayOfMoving()=0;
+void wayOfMoving();
 void set_color(bool &col);
 string get_name();
+void set_pole(string &place);
 
 };
 
@@ -49,6 +50,7 @@ class Pawn : public Figure
 class Queen : public Figure
 {
     public:
+    Queen(int id);
     void wayOfMoving();
 };
 
