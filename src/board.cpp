@@ -11,6 +11,7 @@ map <string,string> arr = {{"A1", "[R]"},{"B1", "[N]"},{"C1", "[B]"},{"D1", "[K]
 
 void Board::createBoard()
 { 
+
 for(int i=3;i<7;i++)
 {
    for(int j=65;j<73;j++)
@@ -63,7 +64,7 @@ void BlackBoard::showChessoard()
 void Board::movingPieces()
 {
 
-    cout<<"Which piece would you like to move from: ";
+    cout<<"\nWhich piece would you like to move from: ";
     cin>>coordinate1;
     cout<<endl;
     cout<<"Where would you like to move this piece to: ";
@@ -74,4 +75,12 @@ void Board::movingPieces()
 
     showChessoard();
 
+}
+
+void Board::getArr()
+{
+   for(int i=0;i<arr.size();i++)
+   {
+      
+   }
 }
