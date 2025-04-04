@@ -13,6 +13,7 @@ class Board
     //bool choice;
     
     public:
+    void getArr();
     void createBoard();
     void movingPieces();
     virtual void showChessoard()=0;
