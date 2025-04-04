@@ -1,7 +1,21 @@
 #include <iostream>
+#include "game.hpp"
+
 using namespace std;
 
-int main(){
+void Game::moving(string &ruch1,string &ruch2)
+{
+    //Dla ruchu 1 
+    
 
-return 0;
+
+
+
+
+
+
+
 }
+
+
+

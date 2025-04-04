@@ -10,14 +10,29 @@ class Board
 {
     private:
     string coordinate1, coordinate2;
-    bool choice;
+    //bool choice;
     
     public:
     void createBoard();
     void movingPieces();
-    bool chooseColor();
-    void showChessoard();
-    
+    virtual void showChessoard()=0;
+
+    friend class Game;
+    //bool chooseColor();
 };
+
+class WhiteBoard : public Board
+{
+    public:
+    void showChessoard();
+};
+
+class BlackBoard : public Board
+{
+    public:
+    void showChessoard();
+};
+
+
 
 #endif //BOARD_HPP
