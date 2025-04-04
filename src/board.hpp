@@ -3,9 +3,12 @@
 
 #include <iostream>
 #include <string>
+#include <map>
+
 
 using namespace std;
 
+extern map <string,string> arr;
 class Board
 {
     private:

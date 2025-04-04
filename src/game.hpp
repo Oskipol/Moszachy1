@@ -1,3 +1,6 @@
+#ifndef GAME_HPP
+#define GAME_HPP
+
 #include <iostream>
 #include "board.hpp"
 
@@ -65,3 +68,5 @@ class Rook : public Figure
     public:
     void wayOfMoving();
 };
+
+#endif //GAME_HPP
