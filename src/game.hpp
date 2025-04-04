@@ -42,7 +42,7 @@ void set_pole(string &place);
 class Pawn : public Figure
 {
     public:
-    Pawn(int idd);
+    Pawn(string place);
     
     void wayOfMoving();
 };
@@ -50,7 +50,6 @@ class Pawn : public Figure
 class Queen : public Figure
 {
     public:
-    Queen(int id);
     void wayOfMoving();
 };
 

@@ -12,8 +12,8 @@ void Game::moving(string &ruch1,string &ruch2)
     
 }
 
-Pawn::Pawn(int idd){
-    id=idd;
+Pawn::Pawn(string place){
+    pole=place;
 }
 
 string Figure::get_name(){
