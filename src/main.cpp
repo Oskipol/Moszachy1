@@ -15,7 +15,7 @@ int main(){
     BlackBoard b1;
     Game f1;
     f1.moving("A1", "A2");
-    //KACZKA
+    //KACZK
     
 
   
