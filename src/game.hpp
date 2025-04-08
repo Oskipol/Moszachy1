@@ -19,9 +19,6 @@ class Game
     void enPassant();
     void check();
     void checkMate();
-
-    
-
 };
 
 class Figure:public Game
