@@ -46,6 +46,7 @@ Bishop b2("F8",0);
 Queen q1("D8",0);
 King k1("E8",0);
 
+ Empty e1;
 
 
 // Map of positions to figures
@@ -60,9 +61,10 @@ map<string, Figure*> arr = {
     {"C1", &B1}, {"F1", &B2}, {"C8", &b1}, {"F8", &b2},
     {"D1", &Q1}, {"E1", &K1}, {"D8", &q1}, {"E8", &k1},
     
+    
 };
 
-bool Board::chooseColor(bool choiceOfColor)
+int Board::chooseColor()
 {
     cout << "Jakim kolorem chcesz grac?" << endl;
     cout << "1. Biale" << endl;
@@ -75,11 +77,12 @@ bool Board::chooseColor(bool choiceOfColor)
         return false; // Invalid choice
     }
 
-    return choiceOfColor == 1 ? 1 : 0; // 1 for white, 0 for black
+    return choiceOfColor;
 }
 
-void Board::createBoard()
+void Board::createBoardWhite()
 {
+    //dla bialych
     for (char row = '8'; row >= '1'; --row)
     {
         for (char col = 'A'; col <= 'H'; ++col)
@@ -97,8 +100,56 @@ void Board::createBoard()
         cout << endl;
     }
 }
+void Board::createBoardBlack()
+{
+    //dla czarnuchow
+    for (char row = '1'; row <= '8'; ++row)
+    {
+        for (char col = 'H'; col >= 'A'; --col)
+        {
+            string position = string(1, col) + row;
+            if (arr.find(position) != arr.end())
+            {
+                cout << arr[position]->get_name() << " ";
+            }
+            else
+            {
+                cout << "[ ] "; // Empty square
+            }
+        }
+        cout << endl;
+    }
+}
 
+void Board::startGame()
+{
+    int wybor=chooseColor();
+    switch (wybor)
+    {
+    case 1 :
+//DLA BIALYCH
+createBoardWhite();
+        break;
+    case 2 :
+//DLA CZARNUCHOW
+    createBoardBlack();
+    default:
+        break;
+    }
 
+}
 
-//sdsada
-
+void Board::movingPieces()
+{
+    Empty e1;
+    cout<<"Which chess field would you like to move from? ";
+    cin>>coordinate1;
+    cout<<"Which chess field would you like to move it to? ";
+    cin>>coordinate2;
+    
+    arr[coordinate1]->set_pole(coordinate2);
+    arr[coordinate2]=arr[coordinate1];
+    arr[coordinate1] =e1; 
+    createBoardWhite();
+    
+}

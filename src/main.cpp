@@ -6,7 +6,9 @@ using namespace std;
 int main(){
 
 Board b1;
-b1.createBoard();
+b1.startGame();
+b1.movingPieces();
+
 
 return 0;
 }

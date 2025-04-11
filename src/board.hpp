@@ -13,11 +13,13 @@ class Board
     
     protected:
     string coordinate1, coordinate2;
-    bool choiceOfColor;
+    int choiceOfColor;
 
     public:
-    bool chooseColor(bool choiceOfColor); 
-    void createBoard();
+    void startGame();
+    int chooseColor(); 
+    void createBoardWhite();
+    void createBoardBlack();
     void movingPieces();
     void showChessoard();
 };

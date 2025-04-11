@@ -30,11 +30,20 @@ class Figure:public Game
     void set_color(bool &col);
     string get_name()const;
     void set_pole(string &place);
+    void clear();
 protected:
     int id;
     string name, pole;
     bool color;
 
+
+};
+
+class Empty : public Figure
+{
+    public:
+    const string name = "[ ]"; 
+    Empty();
 
 };
 
@@ -83,11 +92,5 @@ class Rook : public Figure
     Rook(string place,bool coloor);
     void wayOfMoving();
 };
-
-class Empty
-{
-
-};
-
 
 #endif //GAME_HPP

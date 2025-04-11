@@ -89,3 +89,11 @@ Rook::Rook(string place,bool coloor){
  string Figure::get_name()const{
      return name;
  }
+
+
+ void Figure::set_pole(string &place)
+ {
+    pole=place;
+
+ }
+
