@@ -42,9 +42,7 @@ protected:
 class Empty : public Figure
 {
     public:
-    const string name = "[ ]"; 
-    Empty();
-
+    Empty(string n="[ ]"){name=n;}
 };
 
 class Pawn : public Figure
